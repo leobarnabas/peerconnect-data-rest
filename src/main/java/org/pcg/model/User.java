@@ -1,0 +1,111 @@
+package org.pcg.model;
+
+import org.springframework.data.annotation.Id;
+
+import java.util.Date;
+
+public class User {
+
+    @Id
+    public String id;
+
+
+    private String firstName;
+    private String lastName;
+    private Date dateOfBirth;
+    private String gender;
+    private String area;
+    private String field;
+    private String meetingPreference;
+    private boolean isMentor;
+    private Mentor mentor;
+    private Mentee mentee;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Mentor getMentor() {
+        return mentor;
+    }
+
+    public void setMentor(Mentor mentor) {
+        this.mentor = mentor;
+    }
+
+    public Mentee getMentee() {
+        return mentee;
+    }
+
+    public void setMentee(Mentee mentee) {
+        this.mentee = mentee;
+    }
+
+    public boolean isMentor() {
+        return isMentor;
+    }
+
+    public void setMentor(boolean isMentor) {
+        this.isMentor = isMentor;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getField() {
+        return field;
+    }
+
+    public void setField(String field) {
+        this.field = field;
+    }
+
+    public String getMeetingPreference() {
+        return meetingPreference;
+    }
+
+    public void setMeetingPreference(String meetingPreference) {
+        this.meetingPreference = meetingPreference;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+}
