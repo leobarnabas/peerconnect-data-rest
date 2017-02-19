@@ -11,5 +11,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface UserRepository extends MongoRepository<User, String> {
 
 	List<User> findByLastName(@Param("name") String name);
-
+	List<User> findByEmailId(@Param("emailId") String emailId);
 }
