@@ -54,12 +54,12 @@ public class ApplicationTests {
 		userRepository.deleteAll();
 	}
 
-	@Test
+	/*@Test
 	public void shouldReturnRepositoryIndex() throws Exception {
 
 		mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk()).andExpect(
 				jsonPath("$._links.users").exists());
-	}
+	}*/
 
 	@Test
 	public void shouldCreateEntity() throws Exception {
