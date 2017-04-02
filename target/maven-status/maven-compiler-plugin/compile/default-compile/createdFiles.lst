@@ -1,5 +1,0 @@
-org\pcg\Application.class
-org\pcg\repository\UserRepository.class
-org\pcg\model\Mentor.class
-org\pcg\model\Mentee.class
-org\pcg\model\User.class
