@@ -51,7 +51,7 @@ public class ApplicationTests {
 
 	@Before
 	public void deleteAllBeforeTests() throws Exception {
-		//userRepository.deleteAll();
+		/*userRepository.deleteAll();*/
 	}
 
 	/*@Test
@@ -65,7 +65,7 @@ public class ApplicationTests {
 	public void shouldCreateEntity() throws Exception {
 
 		/*mockMvc.perform(post("/users").content(
-				"{\"userId\": \"ad439@njit.edu\",\"firstName\": \"Ama\", \"lastName\":\"Dankwah\", \"gender\":\"Female\", \"isMentor\":\"Yes\"}")).andExpect(
+				"{\"id\": \"ad439@njit.edu\",\"firstName\": \"Ama\", \"lastName\":\"Dankwah\", \"gender\":\"Female\", \"isMentor\":\"true\"}")).andExpect(
 						status().isCreated()).andExpect(
 								header().string("Location", containsString("users/")));*/
 	}
