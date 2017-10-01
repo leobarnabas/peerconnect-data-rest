@@ -15,4 +15,8 @@ public interface UserRepository extends MongoRepository<User, String> {
     List<User> findByEmailId(@Param("emailId") String emailId);
 
     List<User> findByAreaIn(@Param("area") List<String> areas);
+
+    User insert(User user);
+
+    List<User> findAll();
 }

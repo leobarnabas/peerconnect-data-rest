@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class User {
 
+
     @Id
     public String id;
 
@@ -125,5 +126,24 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", emailId='" + emailId + '\'' +
+                ", password='" + password + '\'' +
+                ", gender='" + gender + '\'' +
+                ", area='" + area + '\'' +
+                ", field='" + field + '\'' +
+                ", meetingPreference='" + meetingPreference + '\'' +
+                ", isMentor=" + isMentor +
+                ", mentor=" + mentor +
+                ", mentee=" + mentee +
+                '}';
     }
 }
