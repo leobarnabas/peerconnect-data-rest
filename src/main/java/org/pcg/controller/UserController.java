@@ -5,10 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import org.pcg.model.User;
 import org.pcg.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -33,5 +30,17 @@ public class UserController {
     @ApiOperation(value = "Insert user", notes = "Returns inserted user")
     User saveUser(@RequestBody @Valid User user) {
         return userRepository.insert(user);
+    }
+
+    @RequestMapping(value="/{lastName}",method = RequestMethod.GET)
+    @ApiOperation(value = "Get user by last name", notes = "Returns all the users with matching last name")
+    List<User> findByLastName(@RequestParam String lastName) {
+        return userRepository.findByLastName(lastName);
+    }
+
+    @RequestMapping(value="/findByAreaInAndUserType",method = RequestMethod.GET)
+    @ApiOperation(value = "Get mentors by area", notes = "Returns all the mentors based on the area")
+    List<User> findByAreaInAndUserType(@RequestParam("area") List<String> areas) {
+        return userRepository.findByAreaInAndUserType(areas,"mentor");
     }
 }
