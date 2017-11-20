@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import org.pcg.model.User;
 import org.pcg.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -20,6 +20,9 @@ import java.util.List;
 public class UserController {
     @Autowired
     UserRepository userRepository;
+
+    /*@Autowired
+    PasswordEncoder bCryptPasswordEncoder;*/
 
     /*private BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder();*/
 
@@ -37,6 +40,12 @@ public class UserController {
         return userRepository.insert(user);
     }
 
+    @RequestMapping(method = RequestMethod.PUT)
+    @ApiOperation(value = "Update user", notes = "Returns updated user")
+    User updateUser(@RequestBody @Valid User user) {
+        return userRepository.save(user);
+    }
+
     @RequestMapping(value = "/{lastName}", method = RequestMethod.GET)
     @ApiOperation(value = "Get user by last name", notes = "Returns all the users with matching last name")
     List<User> findByLastName(@RequestParam String lastName) {
@@ -52,7 +61,7 @@ public class UserController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ApiOperation(value = "Verify user login", notes = "Returns the matching user")
     User loginUser(@RequestParam String userId, @RequestParam String password) {
-       /* String encodedPassword = bCryptPasswordEncoder.encode(password);*/
+        /*String encodedPassword = bCryptPasswordEncoder.encode(password);*/
         User user = null;
         user = userRepository.findOne(userId);
 

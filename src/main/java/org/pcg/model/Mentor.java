@@ -15,6 +15,8 @@ public class Mentor {
     private String contribution;
     private String resume;
 
+    private String currentMenteeId;
+
     public String getUserId() {
         return userId;
     }
@@ -87,5 +89,27 @@ public class Mentor {
         this.resume = resume;
     }
 
+    public String getCurrentMenteeId() {
+        return currentMenteeId;
+    }
 
+    public void setCurrentMenteeId(String currentMenteeId) {
+        this.currentMenteeId = currentMenteeId;
+    }
+
+    @Override
+    public String toString() {
+        return "Mentor{" +
+                "userId='" + userId + '\'' +
+                ", highestLvlEducation='" + highestLvlEducation + '\'' +
+                ", school='" + school + '\'' +
+                ", graduationYear=" + graduationYear +
+                ", organization='" + organization + '\'' +
+                ", role='" + role + '\'' +
+                ", duration='" + duration + '\'' +
+                ", contribution='" + contribution + '\'' +
+                ", resume='" + resume + '\'' +
+                ", currentMenteeId='" + currentMenteeId + '\'' +
+                '}';
+    }
 }

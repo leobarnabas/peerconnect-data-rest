@@ -12,6 +12,7 @@ public class Mentee {
     private Double cgpa;
     private String essay;
     private String resume;
+    private String currentMentorId;
 
     public String getUserId() {
         return userId;
@@ -67,5 +68,28 @@ public class Mentee {
 
     public void setResume(String resume) {
         this.resume = resume;
+    }
+
+    public String getCurrentMentorId() {
+        return currentMentorId;
+    }
+
+    public void setCurrentMentorId(String currentMentorId) {
+        this.currentMentorId = currentMentorId;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Mentee{" +
+                "userId='" + userId + '\'' +
+                ", school='" + school + '\'' +
+                ", graduationYear=" + graduationYear +
+                ", program='" + program + '\'' +
+                ", cgpa=" + cgpa +
+                ", essay='" + essay + '\'' +
+                ", resume='" + resume + '\'' +
+                ", currentMentorId='" + currentMentorId + '\'' +
+                '}';
     }
 }
