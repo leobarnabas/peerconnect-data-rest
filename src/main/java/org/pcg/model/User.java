@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class User {
 
+
     @Id
     public String id;
 
@@ -19,7 +20,7 @@ public class User {
     private String area;
     private String field;
     private String meetingPreference;
-    private boolean isMentor;
+    private String userType;
     private Mentor mentor;
     private Mentee mentee;
 
@@ -63,13 +64,13 @@ public class User {
         this.mentee = mentee;
     }
 
-    public boolean isMentor() {
-        return isMentor;
+   public String getUserType() {return userType;}
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
-    public void setMentor(boolean isMentor) {
-        this.isMentor = isMentor;
-    }
+
 
     public Date getDateOfBirth() {
         return dateOfBirth;
@@ -125,5 +126,24 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", emailId='" + emailId + '\'' +
+                ", password='" + password + '\'' +
+                ", gender='" + gender + '\'' +
+                ", area='" + area + '\'' +
+                ", field='" + field + '\'' +
+                ", meetingPreference='" + meetingPreference + '\'' +
+                ", userType=" + userType +
+                ", mentor=" + mentor +
+                ", mentee=" + mentee +
+                '}';
     }
 }
